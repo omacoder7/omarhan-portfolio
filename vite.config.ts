@@ -1,7 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
-import { nitro } from "nitro/vite";
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
@@ -10,7 +9,9 @@ export default defineConfig({
   plugins: [
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tanstackStart({
-      server: { entry: "server" },
+      server: {
+        entry: "server",
+      },
       importProtection: {
         behavior: "error",
         client: {
@@ -21,7 +22,6 @@ export default defineConfig({
     }),
     viteReact(),
     tailwindcss(),
-    nitro({ preset: "vercel" }),
   ],
   resolve: {
     alias: {
