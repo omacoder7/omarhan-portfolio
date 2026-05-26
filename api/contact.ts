@@ -1,5 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { contactSchema } from "@/lib/contact.schema";
+export const config = {
+  runtime: 'edge',
+};
+
+import { contactSchema } from "../src/lib/contact.schema";
 
 const OWNER_EMAIL = process.env.OWNER_EMAIL ?? "owner@example.com";
 const FROM_EMAIL = process.env.CONTACT_FROM ?? "Portfolio <onboarding@resend.dev>";
@@ -44,7 +47,7 @@ function escape(s: string) {
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
-    .replace(/\n/g, "<br>");
+    .replace(/\\n/g, "<br>");
 }
 
 function ownerHtml(d: { name: string; phone: string; email: string; comment: string }) {
@@ -70,49 +73,48 @@ function userHtml(d: { name: string; comment: string }) {
   </div>`;
 }
 
-export const Route = createFileRoute("/api/contact")({
-  server: {
-    handlers: {
-      POST: async ({ request }) => {
-        let body: unknown;
-        try {
-          body = await request.json();
-        } catch {
-          return Response.json({ error: "Invalid JSON" }, { status: 400 });
-        }
-        const parsed = contactSchema.safeParse(body);
-        if (!parsed.success) {
-          return Response.json(
-            { error: "Validation failed", issues: parsed.error.flatten() },
-            { status: 400 },
-          );
-        }
-        const data = parsed.data;
-        try {
-          await sendEmail({
-            to: OWNER_EMAIL,
-            subject: `Новое сообщение от ${data.name}`,
-            html: ownerHtml(data),
-            replyTo: data.email,
-          });
+export default async function handler(request: Request) {
+  if (request.method !== 'POST') {
+    return new Response('Method Not Allowed', { status: 405 });
+  }
 
-          if (SEND_USER_COPY) {
-            await sendEmail({
-              to: data.email,
-              subject: "Спасибо за обращение — Omarhan Babageldiyev",
-              html: userHtml(data),
-            });
-          }
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return Response.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+  
+  const parsed = contactSchema.safeParse(body);
+  if (!parsed.success) {
+    return Response.json(
+      { error: "Validation failed", issues: parsed.error.flatten() },
+      { status: 400 },
+    );
+  }
+  const data = parsed.data;
+  try {
+    await sendEmail({
+      to: OWNER_EMAIL,
+      subject: `Новое сообщение от ${data.name}`,
+      html: ownerHtml(data),
+      replyTo: data.email,
+    });
 
-          return Response.json({ ok: true, userCopySent: SEND_USER_COPY });
-        } catch (e) {
-          console.error("[contact] send failed", e);
-          return Response.json(
-            { error: "Не удалось отправить письмо. Попробуйте позже." },
-            { status: 500 },
-          );
-        }
-      },
-    },
-  },
-});
+    if (SEND_USER_COPY) {
+      await sendEmail({
+        to: data.email,
+        subject: "Спасибо за обращение — Omarhan Babageldiyev",
+        html: userHtml(data),
+      });
+    }
+
+    return Response.json({ ok: true, userCopySent: SEND_USER_COPY });
+  } catch (e) {
+    console.error("[contact] send failed", e);
+    return Response.json(
+      { error: "Не удалось отправить письмо. Попробуйте позже." },
+      { status: 500 },
+    );
+  }
+}
