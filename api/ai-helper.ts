@@ -1,5 +1,5 @@
 export const config = {
-  runtime: 'edge',
+  runtime: "edge",
 };
 
 import { gateway, generateText } from "ai";
@@ -27,8 +27,8 @@ function mockResponse(mode: "enhance" | "ask", text: string): string {
 }
 
 export default async function handler(request: Request) {
-  if (request.method !== 'POST') {
-    return new Response('Method Not Allowed', { status: 405 });
+  if (request.method !== "POST") {
+    return new Response("Method Not Allowed", { status: 405 });
   }
 
   const body = await request.json().catch(() => null);
@@ -39,9 +39,7 @@ export default async function handler(request: Request) {
   const { mode, text } = parsed.data;
 
   const canUseGateway = Boolean(
-    process.env.AI_GATEWAY_API_KEY ||
-    process.env.VERCEL_OIDC_TOKEN ||
-    process.env.VERCEL === "1"
+    process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN || process.env.VERCEL === "1",
   );
 
   if (!canUseGateway) {

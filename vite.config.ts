@@ -5,11 +5,7 @@ import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  plugins: [
-    tsConfigPaths({ projects: ["./tsconfig.json"] }),
-    viteReact(),
-    tailwindcss(),
-  ],
+  plugins: [tsConfigPaths({ projects: ["./tsconfig.json"] }), viteReact(), tailwindcss()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

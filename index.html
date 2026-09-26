@@ -1,28 +1,208 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Omarhan Babageldiyev — Senior Full-Stack Engineer</title>
+
+    <!-- Primary Identity & SEO -->
+    <title>Omarhan Babageldiyev — Senior Full-Stack &amp; Software Engineer</title>
     <meta
       name="description"
-      content="Portfolio of Omarhan Babageldiyev — Senior Full-Stack Engineer with Vue/Nuxt, React/Next, Laravel, NestJS, GIS, fintech and offline-first experience."
+      content="Портфолио Omarhan Babageldiyev — Senior Full-Stack &amp; Software Engineer. 4+ года коммерческого опыта: распределённые системы, GIS-мониторинг, транзакционные контуры, offline-first мобильные приложения. Стек: Vue/Nuxt, React/Next, Laravel 11, NestJS, PostgreSQL, Redis, RabbitMQ, Flutter."
     />
     <meta name="author" content="Omarhan Babageldiyev" />
-    <meta property="og:title" content="Omarhan Babageldiyev — Senior Full-Stack Engineer" />
+    <link rel="canonical" href="https://omarhan-portfolio.vercel.app/" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <!-- Google Search Console Verification: replace TOKEN with your actual verification code -->
+    <meta
+      name="google-site-verification"
+      content="GOOGLE_SEARCH_CONSOLE_VERIFICATION_TOKEN_PLACEHOLDER"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Omarhan Babageldiyev" />
+    <meta
+      property="og:title"
+      content="Omarhan Babageldiyev — Senior Full-Stack &amp; Software Engineer"
+    />
     <meta
       property="og:description"
-      content="Production-scale portfolio covering GIS, fintech, dashboards and mobile apps."
+      content="Production-scale портфолио: отказоустойчивые бэкенды, GIS-мониторинг 30k+ маркеров, 1.5M+ строк PostgreSQL, финтех и offline-first мобильные решения."
     />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://omarhan-portfolio.vercel.app/" />
+    <meta property="og:image" content="https://omarhan-portfolio.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Omarhan Babageldiyev — Senior Full-Stack &amp; Software Engineer"
+    />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Omarhan Babageldiyev — Senior Full-Stack &amp; Software Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Production-scale портфолио: отказоустойчивые бэкенды, GIS-мониторинг 30k+ маркеров, 1.5M+ строк PostgreSQL, финтех и offline-first мобильные решения."
+    />
+    <meta name="twitter:image" content="https://omarhan-portfolio.vercel.app/og-image.png" />
+    <meta name="twitter:creator" content="@omacoder7" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts: Instrument Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     />
+
+    <!-- JSON-LD Structured Data Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://omarhan-portfolio.vercel.app/#person",
+            "name": "Omarhan Babageldiyev",
+            "alternateName": ["Омархан Бабагельдыев", "Omarhan"],
+            "url": "https://omarhan-portfolio.vercel.app/",
+            "image": "https://omarhan-portfolio.vercel.app/og-image.png",
+            "jobTitle": "Senior Full-Stack & Software Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Software Engineering"
+            },
+            "sameAs": [
+              "https://github.com/omacoder7",
+              "https://www.linkedin.com/in/omarhan-babageldiyev-b07183263/"
+            ],
+            "email": "mailto:hello@omarhan.dev",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ashgabat",
+              "addressCountry": "TM"
+            },
+            "knowsAbout": [
+              "Full-Stack Development",
+              "Software Engineering",
+              "Distributed Systems",
+              "Vue.js",
+              "Nuxt.js",
+              "React",
+              "Next.js",
+              "TypeScript",
+              "Laravel",
+              "NestJS",
+              "PostgreSQL",
+              "Redis",
+              "RabbitMQ",
+              "GIS Systems",
+              "MapLibre GL",
+              "Fintech",
+              "Flutter",
+              "Clean Architecture",
+              "Domain-Driven Design",
+              "Offline-First Architecture"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://omarhan-portfolio.vercel.app/#website",
+            "url": "https://omarhan-portfolio.vercel.app/",
+            "name": "Omarhan Babageldiyev — Senior Full-Stack & Software Engineer",
+            "description": "Портфолио и архитектурные решения Omarhan Babageldiyev: высоконагруженные бэкенды, GIS-платформы, финансовые транзакционные контуры.",
+            "inLanguage": ["ru", "en"],
+            "publisher": {
+              "@id": "https://omarhan-portfolio.vercel.app/#person"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Semantic Static Fallback for Search Crawlers & No-JS Clients -->
+      <noscript>
+        <header>
+          <h1>Omarhan Babageldiyev — Senior Full-Stack &amp; Software Engineer</h1>
+          <p>Ashgabat (UTC+5) · Remote · hello@omarhan.dev</p>
+        </header>
+        <main>
+          <section>
+            <h2>О специализации</h2>
+            <p>
+              4+ года коммерческого опыта в frontend, backend, архитектуре распределённых систем,
+              GIS, fintech, analytics dashboards и offline-first мобильных приложениях. Стек:
+              Vue.js, Nuxt.js, React, Next.js, Laravel 11, PHP 8.3+, NestJS, PostgreSQL, Redis,
+              RabbitMQ, Flutter, MapLibre GL.
+            </p>
+          </section>
+          <section>
+            <h2>Опыт работы</h2>
+            <ul>
+              <li>
+                <strong>Senior Full-Stack Engineer</strong> (2023 — Настоящее время) — GIS
+                Monitoring &amp; Document Management System. Кластеризация 30k+ гео-точек,
+                оптимизация 1.5M+ строк PostgreSQL.
+              </li>
+              <li>
+                <strong>Backend &amp; Systems Engineer</strong> (2023 — 2024) — Fintech /
+                Transaction Processing System. Идемпотентность, Redis distributed locks, RabbitMQ,
+                NestJS.
+              </li>
+              <li>
+                <strong>Full-Stack &amp; Mobile Engineer</strong> (2022 — 2023) — Offline-first
+                приложение (Flutter, Hive, BLoC), дашборды аналитики (Chart.js), потоковый экспорт
+                отчётов (Laravel Excel).
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Ключевые проекты</h2>
+            <ul>
+              <li>
+                GIS Monitoring &amp; Document Management System (Vue.js, Laravel, PostgreSQL,
+                MapLibre GL, TypeScript)
+              </li>
+              <li>
+                Fintech / Transaction Processing System (Laravel, NestJS, Redis, RabbitMQ,
+                PostgreSQL)
+              </li>
+              <li>Offline-First Mobile Application (Flutter, BLoC, Hive, REST APIs)</li>
+              <li>Enterprise Analytics Dashboard (TypeScript, Chart.js, REST APIs, SCSS)</li>
+              <li>Advanced Excel Reporting System (Laravel, Laravel Excel, PHP, SQL, Queues)</li>
+              <li>CRM / Client Management Interfaces (Vue.js, Nuxt.js, TypeScript, SCSS)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Контакты</h2>
+            <p>Email: <a href="mailto:hello@omarhan.dev">hello@omarhan.dev</a></p>
+            <p>GitHub: <a href="https://github.com/omacoder7">https://github.com/omacoder7</a></p>
+            <p>
+              LinkedIn:
+              <a href="https://www.linkedin.com/in/omarhan-babageldiyev-b07183263/"
+                >Omarhan Babageldiyev</a
+              >
+            </p>
+          </section>
+        </main>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

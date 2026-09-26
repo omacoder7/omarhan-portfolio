@@ -8,14 +8,12 @@ import "./styles.css";
 const queryClient = new QueryClient();
 
 const rootElement = document.getElementById("root")!;
-if (!rootElement.innerHTML) {
-  const root = createRoot(rootElement);
-  root.render(
-    <StrictMode>
-      <QueryClientProvider client={queryClient}>
-        <App />
-        <Toaster richColors position="top-right" />
-      </QueryClientProvider>
-    </StrictMode>,
-  );
-}
+const root = createRoot(rootElement);
+root.render(
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <App />
+      <Toaster richColors position="top-right" />
+    </QueryClientProvider>
+  </StrictMode>,
+);

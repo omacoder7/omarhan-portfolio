@@ -1,5 +1,5 @@
 export const config = {
-  runtime: 'edge',
+  runtime: "edge",
 };
 
 import { contactSchema } from "../src/lib/contact.schema";
@@ -74,8 +74,8 @@ function userHtml(d: { name: string; comment: string }) {
 }
 
 export default async function handler(request: Request) {
-  if (request.method !== 'POST') {
-    return new Response('Method Not Allowed', { status: 405 });
+  if (request.method !== "POST") {
+    return new Response("Method Not Allowed", { status: 405 });
   }
 
   let body: unknown;
@@ -84,7 +84,7 @@ export default async function handler(request: Request) {
   } catch {
     return Response.json({ error: "Invalid JSON" }, { status: 400 });
   }
-  
+
   const parsed = contactSchema.safeParse(body);
   if (!parsed.success) {
     return Response.json(

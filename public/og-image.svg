@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <style>
+      .mono { font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0c0d10"/>
+
+  <!-- Subtle editorial grid & border -->
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#23242a" stroke-width="1.5"/>
+  <line x1="40" y1="110" x2="1160" y2="110" stroke="#23242a" stroke-width="1"/>
+  <line x1="40" y1="510" x2="1160" y2="510" stroke="#23242a" stroke-width="1"/>
+
+  <!-- Top bar metadata -->
+  <text x="70" y="82" class="mono" font-size="14" font-weight="600" fill="#e5ad58" letter-spacing="2">[ 01 // ENGINEERING PORTFOLIO ]</text>
+  <text x="1130" y="82" class="mono" font-size="14" font-weight="500" fill="#7a7b85" text-anchor="end">ASHGABAT (UTC+5) · REMOTE</text>
+
+  <!-- Corner crosshairs -->
+  <path d="M35 40 H45 M40 35 V45" stroke="#7a7b85" stroke-width="1.5"/>
+  <path d="M1155 40 H1165 M1160 35 V45" stroke="#7a7b85" stroke-width="1.5"/>
+  <path d="M35 590 H45 M40 585 V595" stroke="#7a7b85" stroke-width="1.5"/>
+  <path d="M1155 590 H1165 M1160 585 V595" stroke="#7a7b85" stroke-width="1.5"/>
+
+  <!-- Main Identity -->
+  <text x="70" y="215" class="sans" font-size="64" font-weight="700" fill="#f5f5f3" letter-spacing="-1.5">Omarhan Babageldiyev</text>
+  <text x="70" y="275" class="sans" font-size="30" font-weight="500" fill="#e5ad58">Senior Full-Stack &amp; Software Engineer</text>
+
+  <!-- Engineering Narrative -->
+  <text x="70" y="340" class="sans" font-size="20" font-weight="400" fill="#a1a2ab">4+ years building high-throughput backend services, GIS mapping systems,</text>
+  <text x="70" y="370" class="sans" font-size="20" font-weight="400" fill="#a1a2ab">distributed transaction pipelines, and offline-first mobile applications.</text>
+
+  <!-- Technical Specializations tags -->
+  <g transform="translate(70, 420)">
+    <rect x="0" y="0" width="170" height="36" rx="4" fill="#18191f" stroke="#2a2c35" stroke-width="1"/>
+    <text x="85" y="23" class="mono" font-size="13" font-weight="500" fill="#d2d3dc" text-anchor="middle">GIS &amp; 30k+ Nodes</text>
+
+    <rect x="185" y="0" width="190" height="36" rx="4" fill="#18191f" stroke="#2a2c35" stroke-width="1"/>
+    <text x="280" y="23" class="mono" font-size="13" font-weight="500" fill="#d2d3dc" text-anchor="middle">1.5M+ Rows SQL Tune</text>
+
+    <rect x="390" y="0" width="200" height="36" rx="4" fill="#18191f" stroke="#2a2c35" stroke-width="1"/>
+    <text x="490" y="23" class="mono" font-size="13" font-weight="500" fill="#d2d3dc" text-anchor="middle">Fintech Idempotency</text>
+
+    <rect x="605" y="0" width="170" height="36" rx="4" fill="#18191f" stroke="#2a2c35" stroke-width="1"/>
+    <text x="690" y="23" class="mono" font-size="13" font-weight="500" fill="#d2d3dc" text-anchor="middle">Offline-First Sync</text>
+  </g>
+
+  <!-- Bottom colophon -->
+  <text x="70" y="552" class="mono" font-size="14" font-weight="500" fill="#7a7b85">STACK: Vue · Nuxt · React · Next · Laravel · NestJS · PostgreSQL · Redis · RabbitMQ · Flutter</text>
+  <text x="1130" y="552" class="mono" font-size="14" font-weight="600" fill="#e5ad58" text-anchor="end">omarhan-portfolio.vercel.app</text>
+</svg>

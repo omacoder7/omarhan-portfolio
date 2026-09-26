@@ -2,7 +2,11 @@
   "buildCommand": "npm run build",
   "devCommand": "vite dev",
   "installCommand": "npm install",
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets/|api/|robots\\.txt|sitemap\\.xml|favicon\\.svg|og-image\\.png|og-image\\.svg).*)",
+      "destination": "/index.html"
+    }
   ]
 }
